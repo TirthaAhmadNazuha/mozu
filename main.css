@@ -1,1 +1,326 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://fonts.googleapis.com/css2?family=Asap&family=Niconne&display=swap");
+@font-face {
+  font-family: "The Book";
+  src: url("The Book.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: "Asap", sans-serif;
+  font-size: calc(5px + 1.5vh + 0.2vw);
+  color: #101214;
+  background: #fbfcff;
+}
+
+ul {
+  cursor: default;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+a,
+abbr {
+  text-decoration: none;
+  color: inherit;
+}
+
+i {
+  font-size: larger;
+}
+
+h1 {
+  font-size: calc(5px + 2.5vh + 0.8vw);
+}
+
+h2 {
+  font-size: calc(5px + 2.5vh + 0.6vw);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 14vh;
+  width: 100vw;
+  padding: 0 calc(15px + 4vw);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfcff), to(#eedcff));
+  background: linear-gradient(to bottom, #fbfcff, #eedcff);
+}
+
+.nav ul {
+  width: 38%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav ul li {
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.nav #logo {
+  font-family: "Niconne", cursive;
+  font-size: 2.5rem;
+}
+
+.nav .topLamp {
+  position: absolute;
+  top: 0;
+  height: 0.6vh;
+  background: #b661e7;
+  -webkit-transition: 310ms ease;
+  transition: 310ms ease;
+}
+
+.nav .subItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav .menu,
+.nav .subItems div {
+  font-size: large;
+  width: 7.6vh;
+  padding-top: 0.6vh;
+  height: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  background: #eedcff;
+  border-radius: 50%;
+}
+
+.nav .menu {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.nav.on {
+  background: #0000;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.con {
+  width: 100%;
+  min-height: 100vh;
+  background: #eedcff;
+  padding: 0 8vw;
+  padding-top: 17vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.con .nameUser {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.con .jumbotron {
+  width: 100%;
+  height: 30vh;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.con .jumbotron .item {
+  scroll-snap-align: start;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  min-width: 98%;
+  padding: 3vh calc(2.5vh + 1vw);
+  color: #fbfcff;
+  height: 98%;
+  background: indigo;
+  border-radius: 31px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.con .jumbotron::-webkit-scrollbar {
+  display: none;
+}
+
+.con .jumbotron::scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    padding: 0 calc(20px + 5vw);
+  }
+  .nav ul {
+    min-width: 54vh;
+  }
+  .nav ul li {
+    -webkit-transition: 300ms ease;
+    transition: 300ms ease;
+  }
+  .nav ul li.on {
+    text-shadow: 0 3px 5px #b661e7;
+  }
+  .nav ul li:hover {
+    text-shadow: 0 3px 5px #b661e7;
+  }
+  .nav .menu {
+    display: none;
+  }
+  .nav .subItems {
+    max-width: 400px;
+    min-width: 110px;
+    width: 9vw;
+  }
+  .con .jumbotron {
+    height: 50vh;
+  }
+  .bottomNav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav ul {
+    width: 100%;
+    background: #eedcff;
+    height: calc(100vh - 15vh);
+    position: fixed;
+    top: 14vh;
+    left: 0;
+    right: 0;
+    padding-top: 5vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    overflow: hidden;
+    -webkit-transition: 310ms cubic-bezier(0.14, 0.06, 0, 0.82);
+    transition: 310ms cubic-bezier(0.14, 0.06, 0, 0.82);
+  }
+  .nav ul li {
+    width: 100%;
+    height: 9vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: large;
+  }
+  .nav ul li:hover {
+    text-shadow: none;
+  }
+  .nav ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 9vh;
+  }
+  .nav ul li.on {
+    text-shadow: none;
+  }
+  .nav ul.off {
+    height: 0;
+    padding: 0;
+    border: 0;
+  }
+  .nav .topLamp {
+    display: none;
+  }
+  .nav .subItems div {
+    display: none;
+  }
+  .nav .subItems .heart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .bottomNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 67px;
+    padding: 15px 4vw 0 4vw;
+    background: #434144;
+    color: #94909788;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border-radius: 50% 50% 0% 0% / 37% 37% 0% 0%;
+  }
+  .bottomNav .item {
+    padding: 12px;
+  }
+  .bottomNav .item i {
+    font-size: 22.3px;
+  }
+  .bottomNav .item.on {
+    color: #949097;
+  }
+  .bottomNav .bottomLamp {
+    position: absolute;
+    bottom: 0;
+    height: 6px;
+    width: 12px;
+    background: #b661e7;
+  }
+}
+/*# sourceMappingURL=main.css.map */
