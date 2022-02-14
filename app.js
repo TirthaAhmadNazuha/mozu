@@ -1,63 +1,63 @@
 $(document).ready(function () {
-  $(".nav .menu").click(function () {
-    $(".nav ul").toggleClass("off");
+  function sapaUser(data) {
+    $("#welcome").html(`Hello!!, ${data}`);
+  }
+  $("#welcome").html(`Hello!!, ${localStorage.getItem("namamu")}`);
+  $(".bottomNav .item").click(function () {
+    $(this).addClass("on").siblings().removeClass("on");
   });
-  let jumNum = 1;
-  function Jumbotron() {
-    let i = 0;
-    let g =
-      $(".con .jumbotron").prop("scrollWidth") - $(".con .jumbotron").width();
-    if (jumNum == 2) {
-      i = g / 2;
-    } else if (jumNum == 3) {
-      i = g;
-    } else if (jumNum == 4) {
-      jumNum = 1;
-      i = 0;
-    }
-    if (jumNum == 1) i = 0;
+  $(".jumbotron .left p").click(function () {
+    $(this).toggleClass("on");
+  });
+  setTimeout(() => {
+    $(`.firstPage .page.d1`).addClass("on");
+  }, 300);
+  let fpi = 1,
+    namval = false;
+  if (localStorage.getItem("daftar") == "true") {
+    $(".firstPage").css("display", "none");
+  }
+  $(".firstPage .next").click(function () {
+    fpi++;
+    $(`.firstPage .indicator .item:nth-child(${fpi})`)
+      .addClass("on")
+      .siblings()
+      .removeClass("on");
+    $(`.firstPage .page.d${fpi}`).addClass("ro").siblings().removeClass("ro");
     setTimeout(() => {
-      $(".con .jumbotron").scrollLeft(i);
-      jumNum++;
-      Jumbotron();
-    }, 2300);
-  }
-  Jumbotron();
-
-  function listNavOn() {
-    let wd = $(".nav ul li.on").width();
-    let pos = $(".nav ul li.on").position().left;
-
-    $(".topLamp").css({
-      width: wd + "px",
-      left: pos + "px",
-    });
-  }
-  listNavOn();
-  $(window)
-    .resize(function () {
-      listNavOn();
-    })
-    .on("load", function () {
-      listNavOn();
-    });
-
-  $(".nav ul li")
-    .mouseenter(function () {
-      let wd = $(this).width();
-      let pos = $(this).position().left;
-
-      $(".topLamp").css({
-        width: wd + "px",
-        left: pos + "px",
-      });
-    })
-    .mouseleave(function () {
-      listNavOn();
-    });
-  const name = "Eren";
-  const userName = (name) => {
-    return `Hello!, ${name}`;
-  };
-  $(".con .nameUser").html(userName(name));
+      if (fpi != 4) $(`.firstPage .page.d${fpi - 1}`).addClass("off");
+      setTimeout(() => {
+        $(`.firstPage .page.d${fpi}`)
+          .addClass("on")
+          .siblings()
+          .removeClass("on");
+      }, 10);
+    }, 10);
+    if (fpi == 3) {
+      setTimeout(() => {
+        $(".firstPage .page.d3 .inputname input").focus();
+      }, 400);
+    }
+    if (fpi == 4 && namval) {
+      fpi = 4;
+      lagi = true;
+      $(".firstPage").fadeOut(400);
+      localStorage.setItem(
+        "namamu",
+        $(".firstPage .page.d3 .inputname input").val()
+      );
+      localStorage.setItem("daftar", true);
+      sapaUser(localStorage.getItem("namamu"));
+      console.log(nameMe);
+    } else if (fpi == 4 && !namval) {
+      fpi = 3;
+      $(".firstPage .page.d3 .inputname label").html(
+        "please enter your name!!.."
+      );
+    }
+    console.log(fpi);
+  });
+  $(".firstPage .page.d3 .inputname input").keyup(function () {
+    if ($(this).val() != "") namval = true;
+  });
 });
