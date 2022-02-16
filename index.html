@@ -10,88 +10,56 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="firstPage">
-      <div class="page d1 ro">
-        <img src="img/LogoMozu-small.png" alt="Logo" />
-        <div class="logo">Mozu</div>
-      </div>
-      <div class="page d2">
-        <h1>Nikmati Hidangan Trasional</h1>
-        <p>
-          Bersama Mozu Rasakan Kelezatan Kuliner Nusantara yang menggugah
-          selera.
-        </p>
-      </div>
-
-      <div class="page d3">
-        <img src="img/LogoMozu-small.png" alt="Logo" />
-        <div class="inputname">
-          <label for="name">Masukan Namamu</label><br />
-          <input type="text" id="name" name="name" />
+    <div class="con">
+      <div class="nav">
+        <div id="logo">Mozu</div>
+        <div class="search">
+          <form>
+            <div class="inputSearch">
+              <input type="text" name="" placeholder="Telusuri">
+              <div class="reset"><i class="fi fi-rr-cross"></i></div>
+            </div>
+            <button type="submit"><div class="submit"><i class="fi fi-rr-search"></i></div></button>
+          </form>
+        </div>
+        <div class="menu" title="Menu">
+          <i class="fi fi-rr-menu-burger"></i>
+        </div>
+        <div class="subItems">
+          <div class="troli" title="Belanjaan kamu">
+            <i class="fi fi-rr-shopping-cart"></i>
+          </div>
+          <div class="tema" title="Tema">
+            <i class="fi fi-rr-circle d-none"></i><i class="fi fi-rr-moon"></i>
+          </div>
+          <div class="user" title="Profile"><i class="fi fi-rr-user"></i></div>
         </div>
       </div>
-      <div class="indicator">
-        <div class="item on"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+      <div class="ulMenu d-none off">
+        <div class="troli" title="Belanjaan kamu">
+          <i class="fi fi-rr-shopping-cart"></i>
+        </div>
+        <div class="tandai" title="Di tandai"><i class="fi fi-rr-bookmark"></i></div>
+        <div class="blogs" title="Blogs">
+          <i class="fi fi-rr-resources"></i>
+        </div>
       </div>
-      <div class="next">Next</div>
-    </div>
-    <div class="nav">
-      <ul class="off">
-        <li>Home</li>
-        <li>Foods</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>How to Buy</li>
-        <li>Portfolio</li>
-        <li>Blogs</li>
-      </ul>
-      <div class="menu" title="menu"><i class="fi fi-rr-apps"></i></div>
-      <div class="love" title="disukai"><i class="fi fi-rr-heart"></i></div>
-    </div>
-    <div id="logo" title="Mozu">Mozu</div>
-    <div id="welcome">Hello!, User</div>
-    <div class="bottomNav">
-      <div class="item home on">
-        <i class="fi fi-rr-home"></i>
-        <p>Home</p>
-      </div>
-      <div class="item search">
-        <i class="fi fi-rr-search"></i>
-        <p>Search</p>
-      </div>
-      <div class="item bag">
-        <i class="fi fi-rr-shopping-bag"></i>
-        <p>Bag</p>
-      </div>
-      <div class="item contact">
-        <i class="fi fi-rr-phone-call"></i>
-        <p>Contact</p>
-      </div>
-      <div class="item profile">
-        <i class="fi fi-rr-user"></i>
-        <p>Profile</p>
+      <div class="sekunderNav bottom">
+        <div class="home on" title="Home"><i class="fi fi-rr-home"></i></div>
+        <div class="search" title="Search"><i class="fi fi-rr-search"></i></div>
+        <div class="troli" title="Belanjaan kamu">
+          <i class="fi fi-rr-shopping-cart"></i>
+        </div>
+        <div class="contact" title="Pesan">
+          <i class="fi fi-rr-comment"></i>
+        </div>
+        <div class="user" title="Profile"><i class="fi fi-rr-user"></i></div>
+        <div class="tandai" title="Di tandai"><i class="fi fi-rr-bookmark"></i></div>
+        <div class="blogs" title="Blogs">
+          <i class="fi fi-rr-resources"></i>
+        </div>
       </div>
     </div>
-    <div class="jumbotron d1">
-      <div class="left">
-        <h1>BARU!!, Kue Nastar</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis
-          labore beatae deleniti magni laboriosam officiis laudantium, nostrum
-          consequatur ratione eligendi quisquam. Quasi error facere rerum
-          consectetur? Dolorum rem, fuga ab rerum, totam necessitatibus
-          recusandae distinctio tempore ratione corrupti quas non ad sed unde
-          minima tempora assumenda vitae itaque cum!
-        </p>
-      </div>
-      <div class="right">
-        <div class="img"></div>
-        <div class="buy">Buy</div>
-      </div>
-    </div>
-
     <script src="jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>
   </body>
