@@ -284,7 +284,7 @@ h2 {
   .ulMenu {
     position: fixed;
     left: 0;
-    bottom: -80vh;
+    bottom: -1px;
     right: 0;
     padding-top: 5vh;
     background: #404144;
@@ -295,7 +295,7 @@ h2 {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: 310ms;
+    transition: 310ms ease;
     z-index: 77;
     .conItems {
       width: 92%;
@@ -337,11 +337,7 @@ h2 {
       }
     }
   }
-  .ulMenu.d-none {
-    display: none;
-  }
-  .ulMenu.off, .ulMenu .items.off {
-    opacity: 0;
-    transform: translate(0, -3vh);
+  .ulMenu.off {
+    bottom: -80vh;
   }
 }

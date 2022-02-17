@@ -382,7 +382,7 @@ h2 {
   .ulMenu {
     position: fixed;
     left: 0;
-    bottom: -80vh;
+    bottom: -1px;
     right: 0;
     padding-top: 5vh;
     background: #404144;
@@ -399,8 +399,8 @@ h2 {
         -ms-flex-direction: column;
             flex-direction: column;
     overflow: hidden;
-    -webkit-transition: 310ms;
-    transition: 310ms;
+    -webkit-transition: 310ms ease;
+    transition: 310ms ease;
     z-index: 77;
   }
   .ulMenu .conItems {
@@ -470,13 +470,8 @@ h2 {
   .ulMenu .conItems div p {
     margin-left: 5vw;
   }
-  .ulMenu.d-none {
-    display: none;
-  }
-  .ulMenu.off, .ulMenu .items.off {
-    opacity: 0;
-    -webkit-transform: translate(0, -3vh);
-            transform: translate(0, -3vh);
+  .ulMenu.off {
+    bottom: -80vh;
   }
 }
 /*# sourceMappingURL=main.css.map */

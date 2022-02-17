@@ -5,7 +5,6 @@ $(document).ready(function () {
     }
     let dy = 0
     let ulMenuHeight = -parseInt($('.con .ulMenu').css('height'), 10);
-    $('.con .ulMenu').css('bottom', `calc(${ulMenuHeight + 'px'} + -10vh)`)
 
     $('.con .ulMenu').on('touchstart', (e) => {
         $('.con .ulMenu').css('transition', 'none');
@@ -22,7 +21,7 @@ $(document).ready(function () {
         })
         // console.log(e.targetTouches[0].clientY)
     }).on('touchend', (e) => {
-        $('.con .ulMenu').css('transition', '310ms');
+        $('.con .ulMenu').css('transition', '310ms ease');
         if (parseInt($('.con .ulMenu').css('bottom'), 10) > 0) $('.con .ulMenu').css('bottom', '0')
         if (parseInt($('.con .ulMenu').css('bottom'), 10) < ulMenuHeight / 2) {
             $('.con .ulMenu').css('bottom', `calc(${ulMenuHeight + 'px'} + -10vh)`)
@@ -63,7 +62,7 @@ $(document).ready(function () {
     });
     $('.nav .menu').click(function () {
         $('.sekunderNav.side').toggleClass('off');
-        $('.con .ulMenu').css('bottom', '-1px')
+        $('.con .ulMenu').toggleClass('off')
     });
 
     if ($(window).width() >= 768) {
