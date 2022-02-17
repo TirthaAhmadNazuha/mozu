@@ -373,7 +373,7 @@ h2 {
   .nav .subItems .user, .nav .subItems .troli {
     display: none;
   }
-  .subItems div, .menu, .sekunderNav div {
+  div, a {
     -webkit-tap-highlight-color: #0000;
   }
   .sekunderNav .tandai {
@@ -381,9 +381,14 @@ h2 {
   }
   .ulMenu {
     position: fixed;
-    top: 14vh;
     left: 0;
-    background: var(--bg);
+    bottom: -80vh;
+    right: 0;
+    padding-top: 5vh;
+    background: #404144;
+    color: var(--colorDark);
+    border-top-left-radius: calc(2.5vh + 2.5vw);
+    border-top-right-radius: calc(2.5vh + 2.5vw);
     -webkit-box-shadow: 4px 4px 12px -3px #0007;
             box-shadow: 4px 4px 12px -3px #0007;
     display: -webkit-box;
@@ -393,15 +398,77 @@ h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-transition: 310ms cubic-bezier(0, 0.04, 0.11, 1.01);
-    transition: 310ms cubic-bezier(0, 0.04, 0.11, 1.01);
-    z-index: 55;
+    overflow: hidden;
+    -webkit-transition: 310ms;
+    transition: 310ms;
+    z-index: 77;
   }
-  .ulMenu div {
+  .ulMenu .conItems {
+    width: 92%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    margin: auto;
+  }
+  .ulMenu .conItems::before {
+    content: "";
+    width: 30vw;
+    height: 1vh;
+    position: absolute;
+    top: 2.4vh;
+    left: 50%;
+    border-radius: 4vh;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    background: #75757575;
+  }
+  .ulMenu .conItems div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 2vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: inherit;
     padding: 2.4vh calc(2.1vh + .3vw);
   }
-  .ulMenu div i {
+  .ulMenu .conItems div i {
     font-size: x-large;
+  }
+  .ulMenu .conItems div .fi-rr-trash {
+    color: red;
+  }
+  .ulMenu .conItems div .fi-rr-resources {
+    color: cornflowerblue;
+  }
+  .ulMenu .conItems div .fi-rr-comment {
+    color: lawngreen;
+  }
+  .ulMenu .conItems div .fi-rr-user {
+    color: lightblue;
+  }
+  .ulMenu .conItems div .fi-rr-bookmark {
+    color: firebrick;
+  }
+  .ulMenu .conItems div .fi-rr-shopping-cart {
+    color: orange;
+  }
+  .ulMenu .conItems div .fi-rr-moon {
+    color: #b198d8;
+  }
+  .ulMenu .conItems div .fi-rr-circle {
+    color: yellow;
+  }
+  .ulMenu .conItems div p {
+    margin-left: 5vw;
   }
   .ulMenu.d-none {
     display: none;
