@@ -1,0 +1,50 @@
+[
+    {
+        "nama": "rice ball",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": 304582
+    },
+    {
+        "nama": "soft bread",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": 304582
+    },
+    {
+        "nama": "croisand",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": 304582
+    },
+    {
+        "nama": "nastar",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": 304582
+    },
+    {
+        "nama": "bugis",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": 304582
+    },
+    {
+        "nama": "sate singkong",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": 304582
+    },
+    {
+        "nama": "fluppy pancake",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": 304582
+    },
+    {
+        "nama": "brownies",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": 304582
+    }
+]

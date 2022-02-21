@@ -1,9 +1,0 @@
-{
-    "prettier.embeddedLanguageFormatting": "off",
-    "prettier.documentSelectors": [
-        "scss",
-        "html"
-    ],
-    "prettier.bracketSpacing": false,
-    "prettier.configPath": "prettier-setting"
-}

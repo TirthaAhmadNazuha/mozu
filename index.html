@@ -16,10 +16,12 @@
         <div class="search">
           <form>
             <div class="inputSearch">
-              <input type="text" name="" placeholder="Telusuri">
-              <div class="reset"><i class="fi fi-rr-cross"></i></div>
+              <input type="text" name="" placeholder="Telusuri" />
+              <div class="reset"><i class="fi fi-rr-cross-small"></i></div>
             </div>
-            <button type="submit"><div class="submit"><i class="fi fi-rr-search"></i></div></button>
+            <button type="submit">
+              <div class="submit"><i class="fi fi-rr-search"></i></div>
+            </button>
           </form>
         </div>
         <div class="menu" title="Menu">
@@ -38,42 +40,90 @@
       <div class="ulMenu off">
         <div class="conItems">
           <div class="troli" title="Belanjaan kamu">
-            <i class="fi fi-rr-shopping-cart"></i><p>Belanjaan Kamu</p>
+            <i class="fi fi-rr-shopping-cart"></i>
+            <p>Belanjaan Kamu</p>
           </div>
           <div class="tandai" title="Di tandai">
-            <i class="fi fi-rr-bookmark"></i><p>Di tandai</p>
+            <i class="fi fi-rr-bookmark"></i>
+            <p>Di tandai</p>
           </div>
           <div class="user" title="Profile">
-            <i class="fi fi-rr-user"></i><p>Profile</p>
+            <i class="fi fi-rr-user"></i>
+            <p>Profile</p>
           </div>
           <div class="contact" title="Pesan">
-            <i class="fi fi-rr-comment"></i><p>Pesan / Beli</p>
+            <i class="fi fi-rr-comment"></i>
+            <p>Pesan / Beli</p>
           </div>
           <div class="tema" title="Tema">
-            <i class="fi fi-rr-circle d-none"></i><i class="fi fi-rr-moon"></i><p>Tema</p>
+            <i class="fi fi-rr-circle d-none"></i><i class="fi fi-rr-moon"></i>
+            <p>Tema</p>
           </div>
           <div class="blogs" title="Blogs">
-            <i class="fi fi-rr-resources"></i><p>Blogs</p>
+            <i class="fi fi-rr-resources"></i>
+            <p>Blogs</p>
           </div>
           <div class="removeData">
-            <i class="fi fi-rr-trash"></i><p>Hapus Data / akun</p>
+            <i class="fi fi-rr-trash"></i>
+            <p>Hapus Data / akun</p>
           </div>
         </div>
       </div>
-      <div class="sekunderNav bottom">
-        <div class="home on" title="Home"><i class="fi fi-rr-home"></i></div>
-        <div class="search" title="Search"><i class="fi fi-rr-search"></i></div>
-        <div class="troli" title="Belanjaan kamu">
+      <div class="sekunderNav">
+        <div class="home SNitem on" title="Home">
+          <i class="fi fi-rr-home"></i>
+        </div>
+        <div class="search SNitem" title="Search">
+          <i class="fi fi-rr-search"></i>
+        </div>
+        <div class="troli SNitem" title="Belanjaan kamu">
           <i class="fi fi-rr-shopping-cart"></i>
         </div>
-        <div class="contact" title="Pesan">
+
+        <div class="contact SNitem" title="Pesan">
           <i class="fi fi-rr-comment"></i>
         </div>
-        <div class="user" title="Profile"><i class="fi fi-rr-user"></i></div>
-        <div class="tandai" title="Di tandai"><i class="fi fi-rr-bookmark"></i></div>
-        <div class="blogs" title="Blogs">
+        <div class="user SNitem" title="Profile">
+          <i class="fi fi-rr-user"></i>
+        </div>
+        <div class="tandai SNitem" title="Di tandai">
+          <i class="fi fi-rr-bookmark"></i>
+        </div>
+        <div class="blogs SNitem" title="Blogs">
           <i class="fi fi-rr-resources"></i>
         </div>
+      </div>
+      <div class="contenCon">
+        <div class="home item" id="Home">
+          <span class="sapa">Hello!, Shiina</span>
+          <div class="jumbotron">
+            <h1>Rasakan hidang Tradisional Tangerang Selatan</h1>
+          </div>
+        </div>
+        <div class="product item d-none" id="Product">
+          <div class="inputSearch">
+            <form>
+              <div class="bar">
+                <input
+                  type="text"
+                  name="input"
+                  placeholder="Telusuri"
+                  autocomplete="off"
+                />
+                <div class="reset"><i class="fi fi-rr-cross-small"></i></div>
+              </div>
+              <button type="submit">
+                <div class="submit"><i class="fi fi-rr-search"></i></div>
+              </button>
+            </form>
+          </div>
+          <div class="productCon"></div>
+        </div>
+        <div class="cart item d-none" id="Cart"></div>
+        <div class="contact item d-none" id="Buy"></div>
+        <div class="profile item d-none" id="Profile"></div>
+        <div class="simpan item d-none" id="Disimpan"></div>
+        <div class="conBlogs item d-none" id="Blogs"></div>
       </div>
     </div>
     <script src="jquery-3.6.0.min.js"></script>
