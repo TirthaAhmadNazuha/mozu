@@ -15,49 +15,26 @@ $(document).ready(function () {
                 `)
         });
     });
-    $('.contenCon .product .inputSearch form').submit((e) => {
-        e.preventDefault()
-        const value = $('.contenCon .product .inputSearch form input').val()
-        const inputSearching = formDataBases.filter((item) => {
-            return item.nama.toLowerCase().indexOf(value) >= 0
-        })
-        let items = document.querySelectorAll('.product .productCon .items')
-        items.forEach(hide => hide.style.display = 'none')
-        items.forEach(filter => {
-            let title = filter.getAttribute('data-title')
-            if (inputSearching[0].nama == title && value.length >= 1) {
-                filter.style.display = 'block'
-            }
-            if (value.length <= 1) {
-                filter.style.display = 'block'
-            }
-        })
-    })
-    $('.contenCon .product .inputSearch form input').keyup(() => {
-        const value = $('.contenCon .product .inputSearch form input').val()
-        const inputSearching = formDataBases.filter((item) => {
-            return item.nama.toLowerCase().indexOf(value) >= 0
-        })
-        let items = document.querySelectorAll('.product .productCon .items')
-        items.forEach(hide => hide.style.display = 'none')
-        items.forEach(filter => {
-            let title = filter.getAttribute('data-title')
-            if (inputSearching[0].nama == title && value.length >= 1) {
-                filter.style.display = 'block'
-            }
-            if (value.length <= 1) {
-                filter.style.display = 'block'
-            }
-        })
-    })
     $('.nav .search form').submit((e) => {
         e.preventDefault()
         const value = $('.nav .search form input').val().toLowerCase()
         $('.contenCon .product').removeClass('d-none').siblings().addClass('d-none')
         $('head title').html('Search | Mozu')
         $('.sekunderNav .search').addClass('on').siblings().removeClass('on')
-        $('.contenCon .product .inputSearch input').val(value)
-        $('.contenCon .product .inputSearch form').submit()  
+        const inputSearching = formDataBases.filter((item) => {
+            return item.nama.toLowerCase().indexOf(value) >= 0
+        })
+        let items = document.querySelectorAll('.product .productCon .items')
+        items.forEach(hide => hide.style.display = 'none')
+        items.forEach(filter => {
+            let title = filter.getAttribute('data-title')
+            if (inputSearching[0].nama == title && value.length >= 1) {
+                filter.style.display = 'block'
+            }
+            if (value.length <= 1) {
+                filter.style.display = 'block'
+            }
+        })
     })
     $('.nav .inputSearch .reset, .product .inputSearch .reset').click(function () {
         $('.nav .inputSearch input, .product .inputSearch input').val('').focus()
@@ -122,31 +99,38 @@ $(document).ready(function () {
         if ($('.sekunderNav.side .home').hasClass('on')) {
             $('.contenCon .home').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Mozu')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.side .search').hasClass('on')) {
             $('.contenCon .product').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Search | Mozu')
             $('.con .nav').css('min-height', $('.con .nav').css('height'))
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.side .troli').hasClass('on')) {
             $('.contenCon .cart').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Troli | Mozu')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.side .contact').hasClass('on')) {
             $('.contenCon .contact').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Contact | Mozu')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.side .user').hasClass('on')) {
             $('.contenCon .profile').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Profile | Mozu')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.side .tandai').hasClass('on')) {
             $('.contenCon .simpan').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Di tandai | Mozu')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.side .blogs').hasClass('on')) {
             $('.contenCon .conBlogs').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Blogs | Mozu')
+            $(window).scrollTop(0)
         }
         
         
@@ -157,37 +141,44 @@ $(document).ready(function () {
             $('.contenCon .home').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Mozu')
             $('.nav').removeClass('onSearch')
+            $(window).scrollTop(0)
             
         }
         if ($('.sekunderNav.bottom .search').hasClass('on')) {
             $('.contenCon .product').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Search | Mozu')
             $('.nav').addClass('onSearch')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.bottom .troli').hasClass('on')) {
             $('.contenCon .cart').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Troli | Mozu')
             $('.nav').removeClass('onSearch')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.bottom .contact').hasClass('on')) {
             $('.contenCon .contact').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Contact | Mozu')
             $('.nav').removeClass('onSearch')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.bottom .user').hasClass('on')) {
             $('.contenCon .profile').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Profile | Mozu')
             $('.nav').removeClass('onSearch')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.bottom .tandai').hasClass('on')) {
             $('.contenCon .simpan').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Di tandai | Mozu')
             $('.nav').removeClass('onSearch')
+            $(window).scrollTop(0)
         }
         if ($('.sekunderNav.bottom .blogs').hasClass('on')) {
             $('.contenCon .conBlogs').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Blogs | Mozu')
             $('.nav').removeClass('onSearch')
+            $(window).scrollTop(0)
         }
     })
 });

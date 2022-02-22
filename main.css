@@ -427,7 +427,6 @@ h2 {
 
 .con .contenCon .product {
   width: calc(100vh + 2vw);
-  background: var(--bg);
   padding: 0;
   margin: 0 auto;
   max-width: 100vw;
@@ -435,102 +434,35 @@ h2 {
   transition: margin 0;
 }
 
-.con .contenCon .product .inputSearch {
-  background: inherit;
-  width: 100%;
-  height: 10vh;
-  padding: 2.1vh calc(2vh + 0.5vw);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.con .contenCon .product .inputSearch form {
-  width: 100%;
-  height: 100%;
-  min-height: 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: var(--body);
-  overflow: hidden;
-  border-radius: 60vh;
-  font-size: inherit;
-}
-
-.con .contenCon .product .inputSearch form button {
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
-  width: calc(100% - 88%);
-  font-size: inherit;
-  color: inherit;
-  background: #0000;
-}
-
-.con .contenCon .product .inputSearch form button .submit {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: inherit;
-}
-
-.con .contenCon .product .inputSearch form button .submit i {
-  font-size: inherit;
-}
-
-.con .contenCon .product .inputSearch form .bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 88%;
-}
-
-.con .contenCon .product .inputSearch form .bar input {
-  background: #0000;
-  font: inherit;
-  outline: none;
-  height: 100%;
-  width: 88%;
-}
-
-.con .contenCon .product .inputSearch form .bar .reset {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: calc(100% - 88%);
-}
-
 .con .contenCon .product .productCon {
   position: relative;
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
-  grid-gap: 1vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: calc(0.3vh + 1px);
+  padding-bottom: 8vh;
 }
 
 .con .contenCon .product .productCon .items {
-  width: 100%;
-  height: calc(calc(100vh + 2vw - 2vh) / 3);
-  max-height: calc(calc(100vw - 2vh) / 3);
+  width: calc(calc(100vh + 2vw - calc(0.6vh + 2px)) / 3);
+  max-height: calc(calc(100vw - calc(0.6vh + 2px)) / 3);
+  height: calc(calc(100vh + 2vw - calc(0.6vh + 2px)) / 3);
+  max-height: calc(calc(100vw - calc(0.6vh + 2px)) / 3);
   background: royalblue;
   margin: 0;
   padding: 0;
+}
+
+.con .contenCon .product .notFound {
+  text-align: center;
+  width: 100%;
+  padding: 16vh 0;
 }
 
 .con .contenCon .home.d-none {
@@ -625,9 +557,6 @@ h2 {
   }
   .nav .subItems .user,
   .nav .subItems .troli {
-    display: none;
-  }
-  .con .contenCon .product#Product .inputSearch {
     display: none;
   }
   .con .contenCon .product#Product .productCon {
