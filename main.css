@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
 @import url("https://fonts.googleapis.com/css2?family=Asap&family=Niconne&family=Poppins:wght@700&display=swap");
 * {
@@ -117,7 +116,7 @@ h2 {
 }
 
 .nav .search {
-  width: 40%;
+  width: 42%;
   margin-right: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,12 +138,21 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: calc(100% - 12%);
   padding-right: 0.5vw;
   font-size: inherit;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: inherit;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -161,10 +169,13 @@ h2 {
   font: inherit;
   color: inherit;
   width: 90%;
+  display: inline-block;
 }
 
 .nav .search .inputSearch .reset {
   height: 100%;
+  width: 10%;
+  display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: 1vh;
@@ -243,6 +254,22 @@ h2 {
   -webkit-transition: 310ms ease;
   transition: 310ms ease;
   cursor: pointer;
+}
+
+.nav.onSearch div {
+  display: none;
+}
+
+.nav.onSearch .search,
+.nav.onSearch .search div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.nav.onSearch .inputSearch .reset {
+  display: none;
 }
 
 .sekunderNav {
@@ -420,6 +447,7 @@ h2 {
 .con .contenCon .product .inputSearch form {
   width: 100%;
   height: 100%;
+  min-height: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,18 +522,6 @@ h2 {
   -ms-grid-columns: (auto)[3];
       grid-template-columns: repeat(3, auto);
   grid-gap: 1vh;
-}
-
-.con .contenCon .product .productCon::before {
-  content: "Maaf, pencarian tidak ditemukan 😥";
-  position: absolute;
-  top: 20vh;
-  left: 0;
-  text-align: center;
-  -webkit-filter: opacity(0.6);
-          filter: opacity(0.6);
-  width: 100%;
-  z-index: 1;
 }
 
 .con .contenCon .product .productCon .items {
@@ -589,9 +605,38 @@ h2 {
   .nav .search {
     display: none;
   }
+  .nav .search form {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    padding-left: 2vw;
+  }
+  .nav .search form button {
+    width: calc(18%);
+  }
+  .nav .search form .inputSearch {
+    width: 82%;
+  }
+  .nav .search form .inputSearch input {
+    width: calc(80% - 1vw);
+  }
+  .nav .search form .inputSearch .reset {
+    width: calc(20% + 1vw);
+  }
   .nav .subItems .user,
   .nav .subItems .troli {
     display: none;
+  }
+  .con .contenCon .product#Product .inputSearch {
+    display: none;
+  }
+  .con .contenCon .product#Product .productCon {
+    -ms-grid-columns: (auto)[2];
+        grid-template-columns: repeat(2, auto);
+    grid-gap: 0.3vh;
+  }
+  .con .contenCon .product#Product .productCon .items {
+    max-height: calc(calc(100vw - 0.3vh) / 2);
   }
   div,
   a {

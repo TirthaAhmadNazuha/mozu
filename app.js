@@ -102,9 +102,11 @@ $(document).ready(function () {
     $(window).on("resize", () => {
         if ($(this).width() >= 768) {
             $('.sekunderNav').removeClass('bottom').addClass('side');
+            $('.nav').removeClass('onSearch')
         } else {
             $('.sekunderNav').removeClass('side').addClass('bottom') 
             $('.contenCon').css('width', '100vw')
+            $('.con .nav').css('min-height', $('.con .nav').css('height'))
         }
     }).on("load", () => {
         if ($(this).width() >= 768) {
@@ -124,6 +126,7 @@ $(document).ready(function () {
         if ($('.sekunderNav.side .search').hasClass('on')) {
             $('.contenCon .product').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Search | Mozu')
+            $('.con .nav').css('min-height', $('.con .nav').css('height'))
         }
         if ($('.sekunderNav.side .troli').hasClass('on')) {
             $('.contenCon .cart').removeClass('d-none').siblings().addClass('d-none')
@@ -153,30 +156,38 @@ $(document).ready(function () {
         if ($('.sekunderNav.bottom .home').hasClass('on')) {
             $('.contenCon .home').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Mozu')
+            $('.nav').removeClass('onSearch')
+            
         }
         if ($('.sekunderNav.bottom .search').hasClass('on')) {
             $('.contenCon .product').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Search | Mozu')
+            $('.nav').addClass('onSearch')
         }
         if ($('.sekunderNav.bottom .troli').hasClass('on')) {
             $('.contenCon .cart').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Troli | Mozu')
+            $('.nav').removeClass('onSearch')
         }
         if ($('.sekunderNav.bottom .contact').hasClass('on')) {
             $('.contenCon .contact').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Contact | Mozu')
+            $('.nav').removeClass('onSearch')
         }
         if ($('.sekunderNav.bottom .user').hasClass('on')) {
             $('.contenCon .profile').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Profile | Mozu')
+            $('.nav').removeClass('onSearch')
         }
         if ($('.sekunderNav.bottom .tandai').hasClass('on')) {
             $('.contenCon .simpan').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Di tandai | Mozu')
+            $('.nav').removeClass('onSearch')
         }
         if ($('.sekunderNav.bottom .blogs').hasClass('on')) {
             $('.contenCon .conBlogs').removeClass('d-none').siblings().addClass('d-none')
             $('head title').html('Blogs | Mozu')
+            $('.nav').removeClass('onSearch')
         }
     })
 });
