@@ -57,8 +57,7 @@ $(document).ready(function () {
         $('head title').html('Search | Mozu')
         $('.sekunderNav .search').addClass('on').siblings().removeClass('on')
         $('.contenCon .product .inputSearch input').val(value)
-        $('.contenCon .product .inputSearch form').submit()
-        $('.product .productCon .items').css('height', $('.product .productCon .items').css('width'))  
+        $('.contenCon .product .inputSearch form').submit()  
     })
     $('.nav .inputSearch .reset, .product .inputSearch .reset').click(function () {
         $('.nav .inputSearch input, .product .inputSearch input').val('').focus()
@@ -69,8 +68,6 @@ $(document).ready(function () {
             $('.nav .inputSearch .reset').css('display', 'block')
         } else {$('.nav .inputSearch .reset').css('display', 'none')}
     });
-    $('.product .productCon .items').css('height', $('.product .productCon .items').css('width'))
-    // $('.nav .menu').click(function () {}})
     $('.tema').click(function () {
         $('.tema i').toggleClass('d-none')
         if ($('.tema .fi-rr-moon').hasClass('d-none')) {
@@ -109,7 +106,6 @@ $(document).ready(function () {
             $('.sekunderNav').removeClass('side').addClass('bottom') 
             $('.contenCon').css('width', '100vw')
         }
-        $('.product .productCon .items').css('height', $('.product .productCon .items').css('width'))
     }).on("load", () => {
         if ($(this).width() >= 768) {
             $('.sekunderNav').removeClass('bottom').addClass('side');
@@ -117,7 +113,6 @@ $(document).ready(function () {
             $('.sekunderNav').removeClass('side').addClass('bottom') 
             $('.contenCon').css('width', '100vw')
         }
-        $('.product .productCon .items').css('height', $('.product .productCon .items').css('width'))
     })
 
     $('.sekunderNav.side div').click(function () {
@@ -128,7 +123,6 @@ $(document).ready(function () {
         }
         if ($('.sekunderNav.side .search').hasClass('on')) {
             $('.contenCon .product').removeClass('d-none').siblings().addClass('d-none')
-            $('.product .productCon .items').css('height', $('.product .productCon .items').css('width'))
             $('head title').html('Search | Mozu')
         }
         if ($('.sekunderNav.side .troli').hasClass('on')) {
@@ -162,7 +156,6 @@ $(document).ready(function () {
         }
         if ($('.sekunderNav.bottom .search').hasClass('on')) {
             $('.contenCon .product').removeClass('d-none').siblings().addClass('d-none')
-            $('.product .productCon .items').css('height', $('.product .productCon .items').css('width'))
             $('head title').html('Search | Mozu')
         }
         if ($('.sekunderNav.bottom .troli').hasClass('on')) {

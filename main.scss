@@ -353,7 +353,8 @@ h2 {
       }
       .items {
         width: 100%;
-        height: 0;
+        height: calc(calc(100vh + 2vw - 2vh) / 3);
+        max-height: calc(calc(100vw - 2vh) / 3);
         background: royalblue;
         margin: 0;
         padding: 0;
@@ -520,5 +521,8 @@ h2 {
   }
   .ulMenu.off {
     bottom: -45vh;
+  }
+  .product .productCon {
+    grid-template-columns: repeat(2, auto);
   }
 }
