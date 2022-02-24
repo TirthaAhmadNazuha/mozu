@@ -1,50 +1,79 @@
 [
     {
         "nama": "rice ball",
+        "keyword": "food, kue, rice ball",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
-        "id": 304582
+        "id": false
     },
     {
         "nama": "soft bread",
+        "keyword": "food, kue, soft bread",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
-        "id": 304582
+        "id": false
     },
     {
         "nama": "croisand",
+        "keyword": "food, kue, croisand",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
-        "id": 304582
+        "id": false
     },
     {
         "nama": "nastar",
+        "keyword": "food, kue, nastar",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
-        "id": 304582
+        "id": false
     },
     {
         "nama": "bugis",
+        "keyword": "food, kue, bugis",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
-        "id": 304582
+        "id": false
     },
     {
         "nama": "sate singkong",
+        "keyword": "food, kue, sate singkong",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
-        "id": 304582
+        "id": false
     },
     {
         "nama": "fluppy pancake",
+        "keyword": "food, kue, fluppy pancake",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
-        "id": 304582
+        "id": false
     },
     {
         "nama": "brownies",
+        "keyword": "food, kue, brownies",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
-        "id": 304582
+        "id": false
+    },
+    {
+        "nama": "rendang",
+        "keyword": "food, daging, brownies",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": false
+    },
+    {
+        "nama": "semur",
+        "keyword": "food, daging, brownies",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": false
+    },
+    {
+        "nama": "capuchino",
+        "keyword": "drink, kopi, brownies",
+        "img": "img/",
+        "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
+        "id": false
     }
 ]

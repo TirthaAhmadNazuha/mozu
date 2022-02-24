@@ -50,6 +50,11 @@ h2 {
   font-family: "Poppins", sans-serif;
   font-size: calc(17px + 2vh + 0.2vw);
 }
+::selection {
+  color: inherit;
+  background: #9780ff88;
+}
+
 .judul {
   font-size: calc(9px + 2vh + 0.2vw);
   font-weight: bold;
@@ -105,7 +110,7 @@ h2 {
       flex-wrap: nowrap;
       align-items: center;
       width: calc(100% - 12%);
-      padding-right: 0.5vw;
+      padding-right: 1vw;
       font-size: inherit;
       justify-content: space-between;
       color: inherit;
@@ -125,9 +130,9 @@ h2 {
       .reset {
         height: 100%;
         width: 10%;
-        display: inline-block;
+        display: none;
         box-sizing: border-box;
-        margin-top: 1vh;
+        align-items: center;
         justify-content: center;
         font-size: inherit;
       }
@@ -140,6 +145,8 @@ h2 {
       button {
         order: -1;
         height: 100%;
+        padding-left: 1vw;
+        box-sizing: border-box;
         width: 12%;
         font: inherit;
         color: inherit;
@@ -258,6 +265,8 @@ h2 {
   right: 0;
   width: calc(100vw - calc(3vh + 4vw));
   height: calc(100vh - 14vh);
+  margin-top: auto;
+  margin-left: auto;
   box-sizing: border-box;
   transition: width 300ms cubic-bezier(0.47, 0, 0.75, 0.72);
   z-index: 10;
@@ -269,12 +278,30 @@ h2 {
   }
   .home {
     display: flex;
-    min-height: 100vh;
+    position: relative;
+    min-height: 300vh;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
-    .sapa {
-      margin: 2vh 2vw;
-      margin-right: auto;
+    perspective: 8000;
+    .bg {
+      position: absolute;
+      top: -6vh;
+      left: -5vw;
+      z-index: -1;
+      display: flex;
+      justify-content: end;
+      width: calc(100% + 10vw);
+      height: 112vh;
+      background: url("https://wallpaperaccess.com/full/628286.jpg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      transition: 310ms cubic-bezier(0.04, 0.42, 0.38, 1);
+      .gradient {
+        height: 40%;
+        height: 100%;
+        background: linear-gradient(#0000, var(--body));
+      }
     }
     .jumbotron {
       display: flex;
@@ -284,14 +311,22 @@ h2 {
         width: calc(100vh + 2vw);
         max-width: 90vw;
         text-align: center;
-        margin: 2vh auto;
-        background: linear-gradient(to bottom right, blue, hotpink);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -ms-background-clip: text;
-        color: #0000;
+        margin: 21vh auto 0 auto;
+        // background: linear-gradient(to bottom right, blue, hotpink);
+        color: #fbfcffdf;
+        // background-clip: text;
+        // -webkit-background-clip: text;
+        // -moz-background-clip: text;
+        // -ms-background-clip: text;
       }
+    }
+    .about {
+      margin-top: 50vh;
+      background: linear-gradient(#0000, var(--body), var(--body), var(--body));
+      width: 100%;
+      text-align: center;
+      padding: 50vh 6vw 16vh 6vw;
+      box-sizing: border-box;
     }
   }
   .product {
@@ -343,7 +378,9 @@ h2 {
     display: none;
   }
 }
-
+.light {
+  font-weight: lighter;
+}
 .d-none {
   display: none;
 }
@@ -378,6 +415,15 @@ h2 {
   }
 }
 @media screen and (max-width: 768px) {
+  body {
+    font-size: calc(17px + 0.2vw);
+  }
+  h1 {
+    font-size: calc(42px + 0.2vw);
+  }
+  h2 {
+    font-size: calc(25px + 0.2vh);
+  }
   i {
     font-size: x-large;
   }
@@ -411,16 +457,21 @@ h2 {
       }
     }
   }
-  .con .contenCon .product#Product .productCon {
-    grid-template-columns: repeat(2, auto);
-    grid-gap: 0.3vh;
-    .items {
-      max-height: calc(calc(100vw - 0.3vh) / 2);
+  .con .contenCon .product#Product {
+    width: 100vw;
+    margin: auto;
+    gap: 3px;
+    .productCon {
+      margin: auto;
+      .items {
+        width: calc(calc(100vw - 3px) / 2);
+        height: calc(calc(100vw - 3px) / 2);
+      }
     }
-  }
-  div,
-  a {
-    -webkit-tap-highlight-color: #0000;
+    div,
+    a {
+      -webkit-tap-highlight-color: #0000;
+    }
   }
   .sekunderNav .tandai {
     display: none;
