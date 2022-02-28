@@ -50,6 +50,9 @@ h2 {
   font-family: "Poppins", sans-serif;
   font-size: calc(17px + 2vh + 0.2vw);
 }
+p {
+  line-height: calc(18px + 2vh);
+}
 ::selection {
   color: inherit;
   background: #9780ff88;
@@ -283,27 +286,9 @@ h2 {
     overflow: hidden;
     flex-direction: column;
     align-items: center;
-    perspective: 8000;
-    .bg {
-      position: absolute;
-      top: -6vh;
-      left: -5vw;
-      z-index: -1;
-      display: flex;
-      justify-content: end;
-      width: calc(100% + 10vw);
-      height: 112vh;
-      background: url("https://wallpaperaccess.com/full/628286.jpg") no-repeat;
-      background-position: center;
-      background-size: cover;
-      transition: 310ms cubic-bezier(0.04, 0.42, 0.38, 1);
-      .gradient {
-        height: 40%;
-        height: 100%;
-        background: linear-gradient(#0000, var(--body));
-      }
-    }
     .jumbotron {
+      min-height: 86vh;
+      background: #9780ffcc;
       display: flex;
       flex-wrap: nowrap;
       width: 100%;
@@ -312,12 +297,8 @@ h2 {
         max-width: 90vw;
         text-align: center;
         margin: 21vh auto 0 auto;
-        // background: linear-gradient(to bottom right, blue, hotpink);
-        color: #fbfcffdf;
-        // background-clip: text;
-        // -webkit-background-clip: text;
-        // -moz-background-clip: text;
-        // -ms-background-clip: text;
+        color: #dfdaf5;
+        text-shadow: 4px 4px 12px #0007;
       }
     }
     .about {
@@ -337,6 +318,7 @@ h2 {
     transition: margin 0;
     .productCon {
       position: relative;
+      margin-top: 1vh;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
@@ -345,18 +327,82 @@ h2 {
       padding-bottom: 8vh;
       .items {
         width: calc(calc(100vh + 2vw - calc(0.6vh + 2px)) / 3);
-        max-height: calc(calc(100vw - calc(0.6vh + 2px)) / 3);
         height: calc(calc(100vh + 2vw - calc(0.6vh + 2px)) / 3);
-        max-height: calc(calc(100vw - calc(0.6vh + 2px)) / 3);
         background: royalblue;
         margin: 0;
         padding: 0;
+        a {
+          display: inline-flex;
+          align-items: end;
+          padding: 1.1vh calc(1vh + 0.2vw);
+          color: var(--colorDark);
+          box-sizing: border-box;
+          justify-content: end;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
     .notFound {
       text-align: center;
       width: 100%;
       padding: 16vh 0;
+    }
+  }
+  .itemsAllView {
+    font-size: inherit;
+    width: calc(100vh + 2vw);
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100vw;
+    transition: margin 0;
+    .itemsV {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .image {
+        background: royalblue;
+        min-height: 70vh;
+      }
+      .text {
+        padding: 0 calc(2.8vh + 0.2vw);
+        box-sizing: border-box;
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        .name {
+          box-sizing: border-box;
+          height: 12vh;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .conBtn {
+          display: flex;
+          justify-content: space-evenly;
+          padding: 10vh 0;
+          div {
+            border-radius: 12px;
+            width: 40%;
+            cursor: pointer;
+            display: flex;
+            font-weight: bolder;
+            height: 10vh;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+          }
+          .addCart {
+            color: var(--body);
+            background: #9780ffcc;
+          }
+          .contact {
+            color: #9780ffcc;
+            background: var(--body);
+            border: calc(1px + 0.4vh) solid #9780ffcc;
+          }
+        }
+      }
     }
   }
   .home.d-none {
@@ -411,6 +457,18 @@ h2 {
         transform: translate(0, 0);
         transition: 200ms ease;
       }
+    }
+  }
+  .itemsAllView .conBtn div {
+    transition: 310ms ease;
+    &:hover {
+      box-shadow: 4px 4px 12px -5px #0007;
+      transform: translate(0, -0.5vh);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0, 0);
+      transition: 200ms ease;
     }
   }
 }
@@ -469,7 +527,8 @@ h2 {
       }
     }
     div,
-    a {
+    a,
+    button {
       -webkit-tap-highlight-color: #0000;
     }
   }

@@ -1,41 +1,11 @@
 $(document).ready(function () {
-    //bg perspectif function
-    $('.contenCon .home :is(.bg, h1, p, .jumbotron, .bg div)').on('mousemove', (e) => {
-        const pos = {
-            x: e.clientX,
-            y: e.clientY
-        }
-        const position = $('.contenCon .home :is(.bg, h1, p, .jumbotron)').position();
-        const top = position.top;
-        const left = position.left;
-        
-        const center = {
-            x: left + $('.contenCon .home :is(.bg, h1, p, .jumbotron)').width() / 2,
-            y: top + $('.contenCon .home :is(.bg, h1, p, .jumbotron)').height() / 2 
-        }
-        let hasil = {
-            x: (pos.x - center.x) / 60,
-            y: (-pos.y - -center.y) / 30
-        }
-        // append hasil
-        $('.contenCon .home .bg').css('transform', `rotateX(${hasil.y}deg) rotateY(${hasil.x}deg)`)
-    })
-
-
 
     let formDataBases = []
-    const coba = [
-        {nama: 'Tirtha'},
-        {nama: 'Shiina'},
-        {nama: 'Dia'},
-        {nama: 'Muzan'}
-    ]
     $.getJSON("data/items.json", (data) => {
         formDataBases = data
         formDataBases.forEach(item => {
-            item.id = Math.floor(100000 + Math.random() * 900000)
             $('.product .productCon').append(`
-                    <div class="items" id="${item.id}" data-title="${item.keyword}">${item.nama}</div>
+                    <div class="items" thumb-id="${item.id}" data-title="${item.keyword}"><a href="#${item.id}">${item.nama}</a></div>
                 `)
         });
     });
@@ -45,27 +15,13 @@ $(document).ready(function () {
         $('.contenCon .product').removeClass('d-none').siblings().addClass('d-none')
         $('head title').html('Search | Mozu')
         $('.sekunderNav .search').addClass('on').siblings().removeClass('on')
-        // const inputSearching = formDataBases.filter((item) => {
-        //     return item.nama.toLowerCase().indexOf(value) >= 0
-        // })
-        // let items = document.querySelectorAll('.product .productCon .items')
-        // items.forEach(hide => hide.style.display = 'none')
-        // items.forEach(filter => {
-        //     let title = filter.getAttribute('data-title')
-        //     if (inputSearching[0].nama == title && value.length >= 1) {
-        //         filter.style.display = 'block'
-        //     }
-        //     if (value.length <= 1) {
-        //         filter.style.display = 'block'
-        //     }
-        // })
+        
         $('.contenCon .product .items').css('display', (value) ? 'none' : 'flex')
         formDataBases.forEach(item => {
-            $(`.contenCon .product .items#${item.id}`).filter(() => {
+            $(`.contenCon .product .items[thumb-id="${item.id}"]`).filter(() => {
                 let i = false
-                if ($(`.contenCon .product .items#${item.id}`).attr('data-title').toLowerCase().indexOf(value) > -1) i = true
-                console.log($(`.contenCon .product .items#${item.id}`).attr('data-title'), $(`.contenCon .product .items#${item.id}`).text())
-                if (i) $(`.contenCon .product .items#${item.id}`).css('display', 'flex')
+                if ($(`.contenCon .product .items[thumb-id="${item.id}"]`).attr('data-title').toLowerCase().indexOf(value) > -1) i = true
+                if (i) $(`.contenCon .product .items[thumb-id="${item.id}"]`).css('display', 'flex')
             })
         })
     })
