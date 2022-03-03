@@ -41,11 +41,13 @@ $(document).ready(function () {
             $(':root').css('--color', 'var(--colorDark)')
             $(':root').css('--body', 'var(--bgDark)')
             $(':root').css('color-scheme', 'dark')
+            $(':root').css('--primary', 'var(--priDark)')
         } else {
             $(':root').css('--bg', 'var(--light)')
             $(':root').css('--color', 'var(--colorLight)')
             $(':root').css('--body', 'var(--bgLight)')
             $(':root').css('color-scheme', 'light')
+            $(':root').css('--primary', 'var(--priLight)')
         }
     });
     $('.nav .menu').click(function () {
@@ -124,6 +126,14 @@ $(document).ready(function () {
         
         
     })
+    if ($(window).width() < 768) {
+        let lastScroll = 0
+        const navHeight = $('.nav').height()
+        let navTransform = 0
+        $(window).on('scrolldown', (e) => {
+            console.log(e)
+        })
+    }
     $('.sekunderNav.bottom div').click(function () {
         $(this).addClass('on').siblings().removeClass('on');
         if ($('.sekunderNav.bottom .home').hasClass('on')) {

@@ -1,5 +1,5 @@
 @import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
-@import url("https://fonts.googleapis.com/css2?family=Asap&family=Niconne&family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap&family=Niconne&family=Poppins&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +15,9 @@
   --color: var(--colorLight);
   --body: var(--bgLight);
   --bg: var(--light);
+  --priDark: #7b6cc2;
+  --priLight: #7c5ffd;
+  --primary: var(--priLight);
   color-scheme: light;
 }
 body {
@@ -44,10 +47,12 @@ i {
 }
 h1 {
   font-family: "Poppins", sans-serif;
+  font-weight: 700;
   font-size: calc(30px + 3.5vh + 0.2vw);
 }
 h2 {
   font-family: "Poppins", sans-serif;
+  font-weight: 700;
   font-size: calc(17px + 2vh + 0.2vw);
 }
 p {
@@ -55,7 +60,7 @@ p {
 }
 ::selection {
   color: inherit;
-  background: #9780ff88;
+  background: #7b6cc244;
 }
 
 .judul {
@@ -67,6 +72,39 @@ p {
   width: 100vw;
   min-height: 100vh;
   z-index: 5;
+}
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 88;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  box-sizing: border-box;
+  justify-content: space-between;
+  img {
+    height: 50%;
+    margin-top: auto;
+    filter: drop-shadow(4px 4px 12px #0005);
+  }
+  p {
+    display: block;
+    width: 40vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    justify-content: end;
+    flex-direction: column;
+    background: var(--primary);
+    margin-top: auto;
+  }
 }
 .nav {
   background: var(--bg);
@@ -164,7 +202,7 @@ p {
           font-size: inherit;
           transition: 300ms ease;
           &:hover {
-            color: #9780ffcc;
+            color: var(--primary);
           }
           &:active {
             color: inherit;
@@ -224,7 +262,7 @@ p {
     margin-bottom: 3vh;
     transition: 300ms ease;
     &:hover {
-      color: #9780ffcc;
+      color: var(--primary);
     }
     &:active {
       color: inherit;
@@ -233,7 +271,7 @@ p {
     }
   }
   .on {
-    color: #9780ffcc;
+    color: var(--primary);
   }
   .user {
     margin-top: auto;
@@ -259,7 +297,7 @@ p {
     display: none;
   }
   .on {
-    color: #9780ffcc;
+    color: var(--primary);
   }
 }
 .con .contenCon {
@@ -288,26 +326,57 @@ p {
     align-items: center;
     .jumbotron {
       min-height: 86vh;
-      background: #9780ffcc;
+      position: relative;
       display: flex;
+      flex-direction: column;
+      text-align: center;
       flex-wrap: nowrap;
       width: 100%;
       h1 {
         width: calc(100vh + 2vw);
         max-width: 90vw;
-        text-align: center;
-        margin: 21vh auto 0 auto;
-        color: #dfdaf5;
-        text-shadow: 4px 4px 12px #0007;
+        margin: 18vh auto 0 auto;
+        color: inherit;
+        span {
+          color: var(--primary);
+        }
+      }
+      p {
+        width: calc(100vh + 2vw);
+        max-width: 90vw;
+        margin-bottom: 3vh;
+        margin: 0 auto;
+      }
+      .started {
+        font-family: "Poppins", sans-serif;
+        padding: 2.1vh calc(2vh + 5vw);
+        cursor: pointer;
+        font-weight: lighter;
+        border-radius: 10vh;
+        color: var(--primary);
+        border: 0.4vh solid var(--primary);
+        margin-top: 6vh;
+        margin: auto;
+        box-sizing: border-box;
+        width: max-content;
+        transition: 300ms ease;
       }
     }
-    .about {
-      margin-top: 50vh;
-      background: linear-gradient(#0000, var(--body), var(--body), var(--body));
-      width: 100%;
+    .janji {
+      padding: 10vh 5vw;
+      position: relative;
+      display: flex;
       text-align: center;
-      padding: 50vh 6vw 16vh 6vw;
-      box-sizing: border-box;
+      justify-content: space-evenly;
+      flex-wrap: nowrap;
+      width: 100%;
+      .jItem {
+        width: calc(30vh + 4vw);
+        height: 42vh;
+        border-radius: 1vh;
+        background: inherit;
+        border: 0.4vh solid var(--bg);
+      }
     }
   }
   .product {
@@ -328,7 +397,7 @@ p {
       .items {
         width: calc(calc(100vh + 2vw - calc(0.6vh + 2px)) / 3);
         height: calc(calc(100vh + 2vw - calc(0.6vh + 2px)) / 3);
-        background: royalblue;
+        background: var(--primary);
         margin: 0;
         padding: 0;
         a {
@@ -361,7 +430,7 @@ p {
       display: flex;
       flex-direction: column;
       .image {
-        background: royalblue;
+        background: var(--primary);
         min-height: 70vh;
       }
       .text {
@@ -394,12 +463,12 @@ p {
           }
           .addCart {
             color: var(--body);
-            background: #9780ffcc;
+            background: var(--primary);
           }
           .contact {
-            color: #9780ffcc;
+            color: var(--primary);
             background: var(--body);
-            border: calc(1px + 0.4vh) solid #9780ffcc;
+            border: calc(1px + 0.4vh) solid var(--primary);
           }
         }
       }
@@ -469,6 +538,20 @@ p {
       box-shadow: none;
       transform: translate(0, 0);
       transition: 200ms ease;
+    }
+  }
+  .con .contenCon .home .jumbotron .started {
+    &:hover {
+      box-shadow: 4px 4px 12px -5px #0007;
+      transform: translate(0, -0.5vh);
+      border: 0.4vh solid #0000;
+      color: var(--bgLight);
+      background: var(--primary);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0, 0);
+      color: var(--colorDark);
     }
   }
 }
