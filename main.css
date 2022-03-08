@@ -330,12 +330,28 @@ p {
 }
 
 .nav .subItems div {
+  position: relative;
   padding: 2.1vh calc(2vh + 0.1vw);
   margin-left: 2vh;
   border-radius: 16px;
+  overflow: hidden;
   -webkit-transition: 310ms ease;
   transition: 310ms ease;
   cursor: pointer;
+}
+
+.nav .subItems .user {
+  border-radius: 50%;
+}
+
+.nav .subItems .user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(1.12);
+          transform: scale(1.12);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .nav.onSearch div {
@@ -489,6 +505,8 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(97, 145, 248, 0.6)), to(var(--body)));
+  background: linear-gradient(to bottom right, rgba(97, 145, 248, 0.6), var(--body));
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -525,8 +543,8 @@ p {
   border-radius: 10vh;
   color: var(--primary);
   border: 0.4vh solid var(--primary);
-  margin-top: 6vh;
   margin: auto;
+  margin-top: 6vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: -webkit-max-content;
@@ -536,27 +554,12 @@ p {
   transition: 300ms ease;
 }
 
-.con .contenCon .home .janji {
-  padding: 10vh 5vw;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  width: 100%;
-}
-
-.con .contenCon .home .janji .jItem {
-  width: calc(30vh + 4vw);
-  height: 42vh;
-  border-radius: 1vh;
-  background: inherit;
-  border: 0.4vh solid var(--bg);
+.con .contenCon .home .about {
+  background: var(--primary);
+  color: var(--colorDark);
+  padding: 5vh calc(5vh + 9vw);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .con .contenCon .product {
@@ -709,6 +712,82 @@ p {
   color: var(--primary);
   background: var(--body);
   border: calc(1px + 0.4vh) solid var(--primary);
+}
+
+.con .contenCon .profile {
+  width: calc(100vh + 2vw);
+  padding: 0;
+  margin: 0 auto;
+  max-width: 100vw;
+  -webkit-transition: margin 0;
+  transition: margin 0;
+  background: var(--bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.con .contenCon .profile .avatar {
+  width: 40vh;
+  height: 40vh;
+  max-width: 50vw;
+  max-height: 50vw;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  background: var(--body);
+  background-position: center;
+  background-size: cover;
+  margin: 10vh 0 4vh 0;
+  border-radius: 50%;
+}
+
+.con .contenCon .profile .avatar input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  z-index: 6;
+  display: inline-block;
+}
+
+.con .contenCon .profile .avatar i {
+  font-size: calc(5vw + 12vh);
+  color: #71727475;
+}
+
+.con .contenCon .profile .avatar #imageAvatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.con .contenCon .profile h2:focus {
+  outline: none;
+  background: #7b6cc244;
 }
 
 .con .contenCon .home.d-none {

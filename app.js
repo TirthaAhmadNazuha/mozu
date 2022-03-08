@@ -84,7 +84,18 @@ $(document).ready(function () {
             $('.contenCon').css('width', '100vw')
         }
     })
-
+    $('#Profile h2').on('focus', () => {
+        const i = $('#Profile h2').text()
+        $(window).keydown((e) => {
+            if ($('#Profile h2').text() == i) $('#Profile h2').text('')
+        })
+    }).focusout(() => {
+        localStorage.setItem('nameUser', $('#Profile h2').text())
+    })
+    $('#Profile h2').html(localStorage.getItem('nameUser'))
+    if (localStorage.getItem('avatarImg') !== null) {
+        $('#Profile .avatar #imageAvatar, .nav .subItems .user img').attr('src', localStorage.getItem('avatarImg'))
+    }
     $('.sekunderNav.side div').click(function () {
         $(this).addClass('on').siblings().removeClass('on');
         if ($('.sekunderNav.side .home').hasClass('on')) {
