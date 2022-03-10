@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     let formDataBases = []
     $.getJSON("data/items.json", (data) => {
         formDataBases = data
@@ -88,14 +87,23 @@ $(document).ready(function () {
         const i = $('#Profile h2').text()
         $(window).keydown((e) => {
             if ($('#Profile h2').text() == i) $('#Profile h2').text('')
+            if (e.key == 'Enter') {
+                $('#Profile h2').attr('contenteditable', false)
+                setTimeout(() => {
+                    $('#Profile h2').attr('contenteditable', true)
+                }, 1)
+            }
         })
     }).focusout(() => {
         localStorage.setItem('nameUser', $('#Profile h2').text())
     })
-    $('#Profile h2').html(localStorage.getItem('nameUser'))
-    if (localStorage.getItem('avatarImg') !== null) {
-        $('#Profile .avatar #imageAvatar, .nav .subItems .user img').attr('src', localStorage.getItem('avatarImg'))
+    if (localStorage.getItem('nameUser') != null) {
+        $('#Profile h2').html(localStorage.getItem('nameUser'))
+        console.log(localStorage.getItem('nameUser'))
     }
+    // $('#Profile .avatar #inputAvatar').change(() => {
+    //     console.log(avatarImg)
+    // })
     $('.sekunderNav.side div').click(function () {
         $(this).addClass('on').siblings().removeClass('on');
         if ($('.sekunderNav.side .home').hasClass('on')) {
@@ -191,4 +199,5 @@ $(document).ready(function () {
             $(window).scrollTop(0)
         }
     })
+ 
 });
