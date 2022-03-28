@@ -2,6 +2,34 @@ $(document).ready(function () {
     $(window).scrollTop(0)
     const nameUser = 'Elaina'
     $('.nameUser').text('Hi, ' + nameUser)
+    let cosItem = 'grid'
+    $('.costumize div').click(function() {
+        $(this).addClass('on').siblings().removeClass('on')
+        $('.items .item').addClass('off')
+        setTimeout(() => {
+            if ($('.costumize .grid').hasClass('on')) {
+                cosItem = 'grid'
+            }
+            if ($('.costumize .row').hasClass('on')) {
+                cosItem = 'row'
+            }
+            if ($('.costumize .fullWidth').hasClass('on')) {
+                cosItem = 'fullWidth'
+            }
+            if (cosItem == 'grid') {
+                $('.items').removeClass('row').removeClass('fullWidth').addClass('grid')
+            }
+            if (cosItem == 'row') {
+                $('.items').removeClass('grid').removeClass('fullWidth').addClass('row')
+            } 
+            if (cosItem == 'fullWidth') {
+                $('.items').removeClass('grid').removeClass('row').addClass('fullWidth')
+            }
+            setTimeout(() => {
+                $('.items .item').removeClass('off')
+            }, 330);
+        }, 330);
+    })
 
     function hashScroll() {
         $('.homeCon .items').toggleClass('on');
@@ -13,9 +41,10 @@ $(document).ready(function () {
     }
     let movepage = false
     const pageW = $('Homepage').width()
-    $('.con').on('scroll', (e) => {
-        inScroll()
-        if (parseInt($('.con').scrollTop(), 10) > 32) {
+    $('.pages').on('scroll', (e) => {
+        
+        if (cosItem == 'grid') inScroll()
+        if (parseInt($('.pages').scrollTop(), 10) > 32) {
             $('.searchbar').css('top', '0')
         } else {
             $('.searchbar').css('top', '-8vh')
