@@ -419,6 +419,10 @@ p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -429,18 +433,33 @@ p {
     -webkit-transition: 300ms ease;
     transition: 300ms ease;
   }
+  .bottomNav div i {
+    background: var(--bg);
+    -webkit-transition: background 300ms ease;
+    transition: background 300ms ease;
+  }
+  .bottomNav div span {
+    font-size: calc(calc(5px + 2vh + 0.2vw) / 1.4);
+    opacity: 70%;
+    margin: 1vh 0;
+    text-align: center;
+    display: none;
+  }
   .bottomNav .on {
-    background: var(--primary);
-    border-top-left-radius: 100vh;
-    border-top-right-radius: 100vh;
-    border: 0.9vh solid var(--bg);
-    border-bottom: 0.5px solid var(--bg);
-    padding: 1vh 2.8vw;
-    -webkit-transform: translate(0, calc(-1.5vh + 0.3px));
-            transform: translate(0, calc(-1.5vh + 0.3px));
+    padding-top: 5vh;
+    margin-bottom: 10vh;
   }
   .bottomNav .on i {
-    color: var(--colorDark);
+    color: inherit;
+    background: var(--primary);
+    display: inline-block;
+    padding: 2.4vh;
+    border-radius: 50%;
+    -webkit-box-shadow: var(--shadow);
+            box-shadow: var(--shadow);
+  }
+  .bottomNav .on span {
+    display: inline;
   }
 }
 

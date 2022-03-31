@@ -2,27 +2,37 @@ $(document).ready(function () {
     $(window).scrollTop(0)
     const nameUser = 'Elaina'
     $('.nameUser').text('Hi, ' + nameUser)
-    let cosItem = 'grid'
-    $('.costumize div').click(function() {
+    $('.bottomNav div').click(function() {
         $(this).addClass('on').siblings().removeClass('on')
+    })
+    $('.costumize div').click(function() {
+        $('.costumize div i').css({
+            'opacity': '70%',
+            'color': 'inherit'
+        })
+        $(this).addClass('on').siblings().removeClass('on')
+        $('.costumize .on i').css({
+            'opacity': '1',
+            'color': 'var(--primary)'
+        })
         $('.items .item').addClass('off')
         setTimeout(() => {
             if ($('.costumize .grid').hasClass('on')) {
-                cosItem = 'grid'
+                localStorage.setItem('cosItem','grid')
             }
             if ($('.costumize .row').hasClass('on')) {
-                cosItem = 'row'
+                localStorage.setItem('cosItem','row')
             }
             if ($('.costumize .fullWidth').hasClass('on')) {
-                cosItem = 'fullWidth'
+                localStorage.setItem('cosItem','fullWidth')
             }
-            if (cosItem == 'grid') {
+            if (localStorage.getItem('cosItem') == 'grid'  || null || 'null') {
                 $('.items').removeClass('row').removeClass('fullWidth').addClass('grid')
             }
-            if (cosItem == 'row') {
+            if (localStorage.getItem('cosItem') == 'row') {
                 $('.items').removeClass('grid').removeClass('fullWidth').addClass('row')
             } 
-            if (cosItem == 'fullWidth') {
+            if (localStorage.getItem('cosItem') == 'fullWidth') {
                 $('.items').removeClass('grid').removeClass('row').addClass('fullWidth')
             }
             setTimeout(() => {
@@ -30,6 +40,37 @@ $(document).ready(function () {
             }, 330);
         }, 330);
     })
+    if (localStorage.getItem('cosItem') == 'grid'  || null || 'null') {
+        $('.items').removeClass('row').removeClass('fullWidth').addClass('grid')
+    }
+    if (localStorage.getItem('cosItem') == 'row') {
+        $('.items').removeClass('grid').removeClass('fullWidth').addClass('row')
+    } 
+    if (localStorage.getItem('cosItem') == 'fullWidth') {
+        $('.items').removeClass('grid').removeClass('row').addClass('fullWidth')
+    }
+    $('.costumize .on i').css({
+        'opacity': '70%',
+        'color': 'inherit'
+    })
+    if ($('.items').hasClass('grid')) {
+        $('.costumize .grid i').css({
+            'opacity': '1',
+            'color': 'var(--primary)'
+        })
+    }
+    if ($('.items').hasClass('row')) {
+        $('.costumize .row i').css({
+            'opacity': '1',
+            'color': 'var(--primary)'
+        })
+    }
+    if ($('.items').hasClass('fullWidth')) {
+        $('.costumize .fullWidth i').css({
+            'opacity': '1',
+            'color': 'var(--primary)'
+        })
+    }
 
     function hashScroll() {
         $('.homeCon .items').toggleClass('on');
@@ -43,7 +84,7 @@ $(document).ready(function () {
     const pageW = $('Homepage').width()
     $('.pages').on('scroll', (e) => {
         
-        if (cosItem == 'grid') inScroll()
+        if (localStorage.getItem('cosItem') == 'grid' || null || 'null') inScroll()
         if (parseInt($('.pages').scrollTop(), 10) > 32) {
             $('.searchbar').css('top', '0')
         } else {

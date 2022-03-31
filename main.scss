@@ -308,21 +308,36 @@ p {
       padding: 0 3vw;
       height: 100%;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: 300ms ease;
+      i {
+        background: var(--bg);
+        transition: background 300ms ease;
+      }
+      span {
+        font-size: calc(calc(5px + 2vh + 0.2vw) / 1.4);
+        opacity: 70%;
+        margin: 1vh 0;
+        text-align: center;
+        display: none;
+      }
     }
     .on {
-      background: var(--primary);
-      border-top-left-radius: 100vh;
-      border-top-right-radius: 100vh;
-      border: 0.9vh solid var(--bg);
-      border-bottom: 0.5px solid var(--bg);
-      padding: 1vh 2.8vw;
-      transform: translate(0, calc(-1.5vh + 0.3px));
+      padding-top: 5vh;
+      margin-bottom: 10vh;
       i {
-        color: var(--colorDark);
+        color: inherit;
+        background: var(--primary);
+        display: inline-block;
+        padding: 2.4vh;
+        border-radius: 50%;
+        box-shadow: var(--shadow);
+      }
+      span {
+        display: inline;
       }
     }
   }
