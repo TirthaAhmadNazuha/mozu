@@ -84,7 +84,7 @@ $(document).ready(function () {
     const pageW = $('Homepage').width()
     $('.pages').on('scroll', (e) => {
         
-        if (localStorage.getItem('cosItem') == 'grid' || null || 'null') inScroll()
+        if (localStorage.getItem('cosItem') == 'grid') inScroll()
         if (parseInt($('.pages').scrollTop(), 10) > 32) {
             $('.searchbar').css('top', '0')
         } else {

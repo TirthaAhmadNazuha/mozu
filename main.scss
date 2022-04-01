@@ -119,6 +119,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: end;
+    margin-left: auto;
     height: 8vh;
     padding: 0 5vw;
     box-sizing: border-box;
@@ -157,7 +158,6 @@ p {
       width: 100vw;
       position: relative;
       overflow-x: auto;
-      border-bottom: 0.3vh solid var(--bg);
       align-items: center;
       z-index: 3;
       .item {

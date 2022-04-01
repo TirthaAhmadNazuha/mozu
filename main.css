@@ -145,6 +145,7 @@ p {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
+    margin-left: auto;
     height: 8vh;
     padding: 0 5vw;
     -webkit-box-sizing: border-box;
@@ -193,7 +194,6 @@ p {
     width: 100vw;
     position: relative;
     overflow-x: auto;
-    border-bottom: 0.3vh solid var(--bg);
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
