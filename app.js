@@ -1,10 +1,71 @@
 $(document).ready(function () {
+    let formDataBases = []
+    $.getJSON("data/items.json", (data) => {
+        formDataBases = data
+        const length = Math.floor(formDataBases.length / 2)
+        if (localStorage.getItem('cosItem') == 'grid') {
+            $('.Homepage .homeCon').append(`
+                    <div class="items grid on"></div>
+                    <div class="items grid"></div>
+            `)
+            $('.costumize .grid i').css({
+                'opacity': '1',
+                'color': 'var(--primary)'
+            })
+            for (let i = 0; i < length; i++) {
+                $('.Homepage .homeCon .items.on').append(`
+                    <div class="item" thumb-id="${formDataBases[i].id}" data-title="${formDataBases[i].keyword}">
+                        <div class="text">
+                            <span class="judul">${formDataBases[i].nama}</span>
+                            <span class="price">${formDataBases[i].harga}</span>
+                        </div>
+                    </div>
+                `)
+                $('.Homepage .homeCon .items:last-child').append(`
+                    <div class="item" thumb-id="${formDataBases[i + length].id}" data-title="${formDataBases[i + length].keyword}">
+                        <div class="text">
+                            <span class="judul">${formDataBases[i + length].nama}</span>
+                            <span class="price">${formDataBases[i + length].harga}</span>
+                        </div>
+                    </div>
+                `)
+            }
+        } else {
+            $('.Homepage .homeCon').append(`<div class="items ${localStorage.getItem('cosItem')} on"></div>`)
+            $(`.costumize .${localStorage.getItem('cosItem')} i`).css({
+                'opacity': '1',
+                'color': 'var(--primary)'
+            })
+            formDataBases.forEach(item => {
+                $('.Homepage .homeCon .items.on').append(`
+                    <div class="item" thumb-id="${item.id}" data-title="${item.keyword}">
+                        <div class="text">
+                            <span class="judul">${item.nama}</span>
+                            <span class="price">${item.harga}</span>
+                        </div>
+                    </div>
+                `)
+            })
+        }
+    });
+
     $(window).scrollTop(0)
     const nameUser = 'Elaina'
     $('.nameUser').text('Hi, ' + nameUser)
-    $('.bottomNav div').click(function() {
-        $(this).addClass('on').siblings().removeClass('on')
+
+    $('.bottomNav .home').click(function() {
+        $('.con').scrollLeft(0)
     })
+    $('.bottomNav .bookmark').click(function() {
+        $('.con').scrollLeft(300)
+    })
+
+    $('.con').scroll(() => {
+        const i = $('.con').scrollLeft()
+        if (i < 150) $('.bottomNav .home').addClass('on').siblings().removeClass('on')
+        if (i > 150) $('.bottomNav .bookmark').addClass('on').siblings().removeClass('on')
+    })
+
     $('.costumize div').click(function() {
         $('.costumize div i').css({
             'opacity': '70%',
@@ -17,6 +78,7 @@ $(document).ready(function () {
         })
         $('.items .item').addClass('off')
         setTimeout(() => {
+            $('.Homepage .homeCon .items').remove()
             if ($('.costumize .grid').hasClass('on')) {
                 localStorage.setItem('cosItem','grid')
             }
@@ -26,8 +88,44 @@ $(document).ready(function () {
             if ($('.costumize .fullWidth').hasClass('on')) {
                 localStorage.setItem('cosItem','fullWidth')
             }
-            if (localStorage.getItem('cosItem') == 'grid'  || null || 'null') {
+            if (localStorage.getItem('cosItem') == 'grid') {
+                const length = Math.floor(formDataBases.length / 2)
+                $('.Homepage .homeCon').append(`
+                    <div class="items grid on"></div>
+                    <div class="items grid"></div>
+                `)
+                for (let i = 0; i < length; i++) {
+                    $('.Homepage .homeCon .items.on').append(`
+                        <div class="item" thumb-id="${formDataBases[i].id}" data-title="${formDataBases[i].keyword}">
+                            <div class="text">
+                                <span class="judul">${formDataBases[i].nama}</span>
+                                <span class="price">${formDataBases[i].harga}</span>
+                            </div>
+                        </div>
+                    `)
+                    $('.Homepage .homeCon .items:last-child').append(`
+                        <div class="item" thumb-id="${formDataBases[i + length].id}" data-title="${formDataBases[i + length].keyword}">
+                            <div class="text">
+                                <span class="judul">${formDataBases[i + length].nama}</span>
+                                <span class="price">${formDataBases[i + length].harga}</span>
+                            </div>
+                        </div>
+                    `)
+                }
+
                 $('.items').removeClass('row').removeClass('fullWidth').addClass('grid')
+            } else {
+                $('.Homepage .homeCon').append(`<div class="items on"></div>`)
+                formDataBases.forEach(item => {
+                    $('.Homepage .homeCon .items.on').append(`
+                        <div class="item" thumb-id="${item.id}" data-title="${item.keyword}">
+                            <div class="text">
+                                <span class="judul">${item.nama}</span>
+                                <span class="price">${item.harga}</span>
+                            </div>
+                        </div>
+                    `)
+                })
             }
             if (localStorage.getItem('cosItem') == 'row') {
                 $('.items').removeClass('grid').removeClass('fullWidth').addClass('row')
@@ -40,7 +138,7 @@ $(document).ready(function () {
             }, 330);
         }, 330);
     })
-    if (localStorage.getItem('cosItem') == 'grid'  || null || 'null') {
+    if (localStorage.getItem('cosItem') == 'grid') {
         $('.items').removeClass('row').removeClass('fullWidth').addClass('grid')
     }
     if (localStorage.getItem('cosItem') == 'row') {
@@ -53,24 +151,7 @@ $(document).ready(function () {
         'opacity': '70%',
         'color': 'inherit'
     })
-    if ($('.items').hasClass('grid')) {
-        $('.costumize .grid i').css({
-            'opacity': '1',
-            'color': 'var(--primary)'
-        })
-    }
-    if ($('.items').hasClass('row')) {
-        $('.costumize .row i').css({
-            'opacity': '1',
-            'color': 'var(--primary)'
-        })
-    }
-    if ($('.items').hasClass('fullWidth')) {
-        $('.costumize .fullWidth i').css({
-            'opacity': '1',
-            'color': 'var(--primary)'
-        })
-    }
+    
 
     function hashScroll() {
         $('.homeCon .items').toggleClass('on');

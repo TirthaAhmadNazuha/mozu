@@ -1,6 +1,7 @@
 [
     {
         "nama": "rice ball",
+        "harga": "IDR-13k",
         "keyword": "food, kue, rice ball",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -8,6 +9,7 @@
     },
     {
         "nama": "soft bread",
+        "harga": "IDR-15k",
         "keyword": "food, kue, soft bread",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -15,6 +17,7 @@
     },
     {
         "nama": "croisand",
+        "harga": "IDR-16k",
         "keyword": "food, kue, croisand",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -22,6 +25,7 @@
     },
     {
         "nama": "nastar",
+        "harga": "IDR-32k",
         "keyword": "food, kue, nastar",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -29,6 +33,7 @@
     },
     {
         "nama": "bugis",
+        "harga": "IDR-15k",
         "keyword": "food, kue, bugis",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -36,6 +41,7 @@
     },
     {
         "nama": "sate singkong",
+        "harga": "IDR-15k",
         "keyword": "food, kue, sate singkong",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -43,6 +49,7 @@
     },
     {
         "nama": "fluppy pancake",
+        "harga": "IDR-14k",
         "keyword": "food, kue, fluppy pancake",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -50,6 +57,7 @@
     },
     {
         "nama": "brownies",
+        "harga": "IDR-25k",
         "keyword": "food, kue, brownies",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -57,6 +65,7 @@
     },
     {
         "nama": "rendang",
+        "harga": "IDR-45k",
         "keyword": "food, daging, brownies",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -64,6 +73,7 @@
     },
     {
         "nama": "semur",
+        "harga": "IDR-45k",
         "keyword": "food, daging, brownies",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",
@@ -71,6 +81,7 @@
     },
     {
         "nama": "capuchino",
+        "harga": "IDR-13k",
         "keyword": "drink, kopi, brownies",
         "img": "img/",
         "deskripsi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae et dolorum sequi perferendis eligendi odit eos quia blanditiis rem?",

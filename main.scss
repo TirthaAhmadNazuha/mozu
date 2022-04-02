@@ -85,6 +85,11 @@ p {
       var(--body)
     );
   }
+  div,
+  a,
+  button {
+    -webkit-tap-highlight-color: #0000;
+  }
   .con {
     width: 100vw;
     height: 100vh;
@@ -116,32 +121,32 @@ p {
     z-index: -3;
   }
   .costumize {
+    width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: end;
     margin-left: auto;
     height: 8vh;
     padding: 0 5vw;
     box-sizing: border-box;
-    .row,
-    .grid {
+    div {
       margin-right: 3.3vw;
+    }
+    .row {
+      margin-left: auto;
     }
   }
   .Homepage {
     .mobileNav {
       width: 100vw;
       height: 10vh;
-      padding: 0 5vw;
+      padding: 0 3.3vw 0 5vw;
       box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: end;
-      .search {
-        margin-right: 5vw;
-      }
       div {
         padding: calc(0.7vh + 0.2vw);
+        margin-right: 3.3vw;
       }
       .logo {
         font-family: "Tangerine", cursive;
