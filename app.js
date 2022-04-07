@@ -1,5 +1,15 @@
 $(document).ready(function () {
-
+    $('.bottomNav .item').click(function() {
+        $(this).addClass('on').siblings().removeClass('on')
+    })
+    $('.homePage').on('scroll', () => {
+        if ($('.homePage').scrollTop() > 30) {
+            $('.homePage .nav').addClass('on')
+        } else {
+            $('.homePage .nav').removeClass('on')
+            
+        }
+    })
     // let formDataBases = []
     // $.getJSON("data/items.json", (data) => {
     //     formDataBases = data
